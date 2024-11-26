@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import AppProvider from "@/providers/AppProvider";
+import Swiper from 'swiper';
+// import Swiper styles
+import 'swiper/css';
+import Header from "@/components/layout/Header";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -26,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
